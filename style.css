@@ -1,7 +1,7 @@
 html, body {
   font-family: Roboto, sans-serif;;
 }
-h2, th, td {
+h2, h3, th, td {
   text-align: center;
 }
 thead {
@@ -12,4 +12,7 @@ thead {
   border: 2px solid #ccc;
   border-radius: 4px;
   padding: 15px 15px 25px 15px;
+}
+.salaryCost {
+  display: none;
 }
