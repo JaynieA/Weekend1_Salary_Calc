@@ -18,7 +18,8 @@ var getUserInput = function() {
   var idNum = $('#idNum').val();
   var jobTitle = $('#jobTitle').val();
   var annualSalary = $('#annualSalary').val();
-  console.log(firstName, lastName, idNum, jobTitle, annualSalary);
+  //format annual salary variable input to get rid of commas
+  annualSalary = annualSalary.replace(/,/g, "");
   //create new employee and push it to the employees array
   employees.push(new Employee (firstName, lastName, idNum, jobTitle, annualSalary));
   console.log(employees);
@@ -36,7 +37,7 @@ var appendEmployees = function() {
   console.log('in appendEmployees');
   //append employees array to the DOM
   var index = Number(employees.length)-1;
-  var newEmployeeRow = '<tr><td>'+employees[index].firstName+'</td><td>'+employees[index].lastName+'</td><td>'+employees[index].idNum+'</td><td>'+employees[index].jobTitle+'</td><td>'+employees[index].annualSalary+'</td></tr>';
+  var newEmployeeRow = '<tr><td>'+employees[index].firstName+'</td><td>'+employees[index].lastName+'</td><td>'+employees[index].idNum+'</td><td>'+employees[index].jobTitle+'</td><td>$'+employees[index].annualSalary+'</td></tr>';
   $('#employeeTable').append(newEmployeeRow);
 }; //end appendEmployees
 
@@ -47,9 +48,9 @@ var calcSalaryCost = function(){
   for (var i = 0; i < employees.length; i++) {
     salaryCost += Number(employees[i].annualSalary);
   }
-  console.log(salaryCost/12);
+  console.log((Math.round((salaryCost/12)*100)/100).toFixed(2));
   $('.salaryCost').show();
-  //display total monthly salary cost on DOM
-  $('#salaryTotal').html(salaryCost/12);
+  //display total monthly salary (rounded to 2 decimal points) cost on DOM
+  $('#salaryTotal').html('$'+(Math.round((salaryCost/12)*100)/100).toFixed(2));
   return salaryCost;
 }; //end calcSalaryCost

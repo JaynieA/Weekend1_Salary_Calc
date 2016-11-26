@@ -20,33 +20,35 @@
     <div class="row">
       <div class="col-sm-4">
         <h2>Add an Employee</h2>
+        <hr>
         <form>
           <div class="form-group">
             <label for="firstName">First Name:</label>
-            <input class="form-control" id="firstName" type="text">
+            <input class="form-control" id="firstName" type="text" placeholder="First Name">
           </div>
           <div class="form-group">
             <label for="lastName">Last Name:</label>
-            <input class="form-control" id="lastName" type="text">
+            <input class="form-control" id="lastName" type="text" placeholder="Last Name">
           </div>
           <div class="form-group">
             <label for="idNum">Employee ID #:</label>
-            <input class="form-control" id="idNum" type="text">
+            <input class="form-control" id="idNum" type="text" placeholder="ID Number">
           </div>
           <div class="form-group">
             <label for="jobTitle">Job Title:</label>
-            <input class="form-control" id="jobTitle" type="text">
+            <input class="form-control" id="jobTitle" type="text" placeholder="Job Title">
           </div>
           <div class="form-group">
             <label for="annualSalary">Annual Salary:</label>
-            <input class="form-control" id="annualSalary" type="text">
+            <input class="form-control" id="annualSalary" type="text" placeholder="Annual Salary">
           </div>
           <button class="btn btn-default" type="submit"  onclick="return getUserInput()">Submit</button>
         </form>
       </div>
       <div class="col-sm-offset-2 col-sm-6">
         <h2>Employees</h2>
-        <table class="table table-bordered">
+        <hr>
+        <table class="table table-bordered table-hover">
           <thead>
             <tr>
               <th>First Name</th>
@@ -61,7 +63,7 @@
         </table>
       </div>
       <div class="salaryCost">
-        <h3>Total Salary Cost: $<span id="salaryTotal"></span></h3>
+        <h3>Total Monthly Salary Cost: <span id="salaryTotal"></span></h3>
       </div>
     </div>
   </div>

@@ -1,18 +1,67 @@
 html, body {
   font-family: Roboto, sans-serif;;
 }
+h1 {
+  margin-top: 5%;
+  margin-bottom: 20px;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+}
 h2, h3, th, td {
   text-align: center;
 }
+h1, h2, h3 {
+  color: #515150;
+}
 thead {
-  background-color: #808080;
+  background-color: #919191;
   color: #fff;
 }
 .row {
-  border: 2px solid #ccc;
+  border: 2px solid #515150;
   border-radius: 4px;
   padding: 15px 15px 25px 15px;
 }
 .salaryCost {
   display: none;
+}
+.salaryCost h3 {
+  float: right;
+  margin-right: 50px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+span {
+  color: #439f46;
+}
+.btn {
+  color: #439f46;
+  border-radius: 2px;
+  border: 2px solid #439f46;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+.btn:hover {
+  background-color: #439f46;
+  border: 2px solid #439f46;
+  color: #fff;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  outline: none;
+}
+hr {
+  width: 60px;
+  height: 3px;
+  background-color: #439f46;
+  border-top: none;
+  margin-top: 10px;
+}
+.form-control {
+  background-color: #ccc;
+
+  box-shadow: none;
+  border-radius: 2px;
 }
