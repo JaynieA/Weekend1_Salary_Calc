@@ -10,35 +10,61 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- jQuery and scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="scripts/script.js" charset="utf-8"></script>
 </head>
 <body>
   <div class="container">
     <h1 class="text-center">Salary Calculator</h1>
-    <form>
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input class="form-control" id="firstName" type="text">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>Add an Employee</h2>
+        <form>
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" id="firstName" type="text">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" id="lastName" type="text">
+          </div>
+          <div class="form-group">
+            <label for="idNum">Employee ID #:</label>
+            <input class="form-control" id="idNum" type="text">
+          </div>
+          <div class="form-group">
+            <label for="jobTitle">Job Title:</label>
+            <input class="form-control" id="jobTitle" type="text">
+          </div>
+          <div class="form-group">
+            <label for="annualSalary">Annual Salary:</label>
+            <input class="form-control" id="annualSalary" type="text">
+          </div>
+          <button class="btn btn-default" type="submit"  onclick="return getUserInput()">Submit</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input class="form-control" id="lastName" type="text">
+      <div class="col-sm-offset-2 col-sm-6">
+        <h2>Employees</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>ID #</th>
+              <th>Job Title</th>
+              <th>Annual Salary</th>
+            </tr>
+          </thead>
+          <tbody id="employeeTable">
+          </tbody>
+        </table>
       </div>
-      <div class="form-group">
-        <label for="idNum">Employee ID #:</label>
-        <input class="form-control" id="idNum" type="text">
-      </div>
-      <div class="form-group">
-        <label for="jobTitle">Job Title:</label>
-        <input class="form-control" id="jobTitle" type="text">
-      </div>
-      <div class="form-group">
-        <label for="annualSalary">Annual Salary:</label>
-        <input class="form-control" id="annualSalary" type="text">
-      </div>
-      <button class="btn btn-default" type="submit"  onclick="return getUserInput()">Submit</button>
-    </form>
+    </div>
 
+
+
+    <div id="results"></div>
   </div>
 
 </body>
