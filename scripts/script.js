@@ -12,6 +12,9 @@ var employees = [];
 
 var appendEmployees = function() {
   console.log('in appendEmployees');
+  //show employees table container, hide prompt
+  $('.prompt').hide();
+  $('.employees-display').show();
   //append employees array to the DOM
   var index = Number(employees.length)-1;
   var newEmployeeRow = '<tr><td>'+employees[index].firstName+'</td><td>'+employees[index].lastName+"</td><td class='id'>"+employees[index].idNum+'</td><td>'+employees[index].jobTitle+'</td><td>$'+employees[index].annualSalary+"</td><td><button type='button' class='btn btn-sm btn-default btn_delete' onclick='deleteEmployee.call(this)'><span class='glyphicon glyphicon-trash'></span></button></td></tr>";
@@ -25,8 +28,8 @@ var calcSalaryCost = function(){
   for (var i = 0; i < employees.length; i++) {
     salaryCost += Number(employees[i].annualSalary);
   }
-  $('.salaryCost').show();
   //display total monthly salary cost (rounded to 2 decimal points) on DOM
+  $('.salaryCost').show();
   $('#salaryTotal').html('$'+(Math.round((salaryCost/12)*100)/100).toFixed(2));
   return salaryCost;
 }; //end calcSalaryCost
