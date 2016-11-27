@@ -63,12 +63,9 @@ h3 span {
   color: #fff;
   border: 0px;
 }
-.btn_delete:hover, .btn_delete:active, .btn_delete:active:hover {
+.btn_delete:hover, .btn_delete:active, .btn_delete:focus, .btn_delete:active:hover, .btn_delete:focus:active {
   background-color: #d9534f;
   color: #515150;
-}
-.btn_delete span {
-  transform: scale(1.2, 1.2);
 }
 hr {
   width: 60px;
