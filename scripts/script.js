@@ -37,7 +37,7 @@ var appendEmployees = function() {
   console.log('in appendEmployees');
   //append employees array to the DOM
   var index = Number(employees.length)-1;
-  var newEmployeeRow = '<tr><td>'+employees[index].firstName+'</td><td>'+employees[index].lastName+'</td><td>'+employees[index].idNum+'</td><td>'+employees[index].jobTitle+'</td><td>$'+employees[index].annualSalary+"</td><td><button type='button' class='btn btn-sm btn-default btn_delete' onclick='hideRow()'><span class='glyphicon glyphicon-trash'></span></button></td></tr>";
+  var newEmployeeRow = '<tr><td>'+employees[index].firstName+'</td><td>'+employees[index].lastName+'</td><td>'+employees[index].idNum+'</td><td>'+employees[index].jobTitle+'</td><td>$'+employees[index].annualSalary+"</td><td><button type='button' class='btn btn-sm btn-default btn_delete' onclick='deleteEmployee.call(this)'><span class='glyphicon glyphicon-trash'></span></button></td></tr>";
   $('#employeeTable').append(newEmployeeRow);
 }; //end appendEmployees
 
@@ -55,6 +55,7 @@ var calcSalaryCost = function(){
   return salaryCost;
 }; //end calcSalaryCost
 
-var hideRow = function() {
-  console.log('delete clicked');
-};
+var deleteEmployee = function() {
+  console.log('in deleteEmployee');
+  $(this).closest('tr').remove();
+}; // end deleteEmployee
